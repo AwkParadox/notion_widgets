@@ -4,26 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thumbnail Gallery – Black Background</title>
+  <title>Thumbnail Gallery – Adaptive Background</title>
 
   <!-- Bootstrap & baguetteBox -->
-  <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css"
-  />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css" />
   <link href="./css/thumbnail-gallery.css" rel="stylesheet" />
 
   <style>
-    /* NEW: Page‑wide dark theme */
+    /* Adaptive background based on OS/Browser preference */
     body {
-      background-color: #000; /* black background */
-      color: #fff;           /* make default text readable */
+      background-color: #fff; /* default light */
+      color: #000;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #191919;
+        color: #fff;
+      }
     }
 
     /* Gallery padding */
@@ -46,12 +44,12 @@
       transform: translateY(-10px) scale(1.02);
     }
 
-    /* Lightbox close / nav buttons */
+    /* Lightbox buttons */
     .baguetteBox-button {
       background-color: transparent !important;
     }
 
-    /* Make images responsive */
+    /* Responsive images */
     .carousel-inner > .item > a > img,
     .carousel-inner > .item > img,
     .img-responsive,
